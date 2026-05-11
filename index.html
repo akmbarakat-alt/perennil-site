@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERENNIL — Egyptian Clay</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#f4efe8;
+      color:#1e1b18;
+      font-family:'Inter',sans-serif;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+    }
+
+    .left{
+      padding:90px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:linear-gradient(to bottom right,#f5efe6,#e6d7c4);
+    }
+
+    .brand{
+      letter-spacing:8px;
+      font-size:13px;
+      margin-bottom:30px;
+      opacity:.7;
+    }
+
+    h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:92px;
+      line-height:.9;
+      font-weight:600;
+      margin-bottom:35px;
+    }
+
+    .desc{
+      font-size:18px;
+      line-height:1.9;
+      max-width:520px;
+      opacity:.85;
+      margin-bottom:40px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 30px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:14px;
+      transition:.3s ease;
+      border:1px solid #1e1b18;
+    }
+
+    .btn-dark{
+      background:#1e1b18;
+      color:white;
+    }
+
+    .btn-light{
+      color:#1e1b18;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      opacity:.9;
+    }
+
+    .right{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .right img{
+      width:100%;
+      height:100vh;
+      object-fit:cover;
+    }
+
+    .floating-card{
+      position:absolute;
+      bottom:40px;
+      left:40px;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(10px);
+      padding:24px;
+      border-radius:24px;
+      width:320px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .floating-card h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:34px;
+      margin-bottom:12px;
+    }
+
+    .floating-card p{
+      line-height:1.8;
+      font-size:14px;
+      opacity:.8;
+    }
+
+    section{
+      width:100%;
+    }
+
+    .story{
+      background:#f8f4ef;
+      padding:120px 8%;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .section-title{
+      letter-spacing:6px;
+      font-size:12px;
+      margin-bottom:20px;
+      opacity:.6;
+    }
+
+    h2{
+      font-family:'Cormorant Garamond',serif;
+      font-size:72px;
+      line-height:.95;
+      margin-bottom:30px;
+      font-weight:600;
+    }
+
+    .story p{
+      font-size:18px;
+      line-height:2;
+      opacity:.82;
+      margin-bottom:25px;
+    }
+
+    .story-image{
+      position:relative;
+    }
+
+    .story-image img{
+      width:100%;
+      height:720px;
+      object-fit:cover;
+      border-radius:30px;
+      box-shadow:0 20px 50px rgba(0,0,0,.12);
+    }
+
+    .story-card{
+      position:absolute;
+      bottom:30px;
+      right:30px;
+      background:rgba(255,255,255,.92);
+      padding:28px;
+      border-radius:24px;
+      width:280px;
+    }
+
+    .story-card h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .future{
+      background:#1d1a17;
+      color:white;
+      padding:120px 8%;
+      text-align:center;
+    }
+
+    .future h2{
+      font-size:84px;
+    }
+
+    .future p{
+      max-width:850px;
+      margin:auto;
+      font-size:20px;
+      line-height:2;
+      opacity:.8;
+    }
+
+    .collection{
+      background:#efe7dc;
+      padding:120px 8%;
+    }
+
+    .collection-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      margin-bottom:60px;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .collection-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .product{
+      background:white;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 12px 35px rgba(0,0,0,.06);
+    }
+
+    .product img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+    }
+
+    .product-content{
+      padding:28px;
+    }
+
+    .product-title{
+      font-family:'Cormorant Garamond',serif;
+      font-size:40px;
+      margin-bottom:10px;
+    }
+
+    .product-desc{
+      opacity:.7;
+      line-height:1.8;
+      font-size:15px;
+      margin-bottom:18px;
+    }
+
+    .product-tag{
+      font-size:14px;
+      letter-spacing:2px;
+      opacity:.6;
+    }
+
+    @media(max-width:900px){
+
+      .hero,
+      .story{
+        grid-template-columns:1fr;
+      }
+
+      .left{
+        padding:50px 28px;
+      }
+
+      h1{
+        font-size:62px;
+      }
+
+      h2{
+        font-size:52px;
+      }
+
+      .future h2{
+        font-size:58px;
+      }
+
+      .right img{
+        height:60vh;
+      }
+
+      .story-image img{
+        height:500px;
+      }
+
+      .floating-card,
+      .story-card{
+        width:auto;
+        left:20px;
+        right:20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <div class="left">
+
+      <div class="brand">
+        PERENNIL · EGYPT
+      </div>
+
+      <h1>
+        Clay.<br>
+        Civilization.<br>
+        Legacy.
+      </h1>
+
+      <p class="desc">
+        Handmade Egyptian pottery shaped from Nile-inspired clay and finished by hand.
+        A contemporary luxury brand rooted in six thousand years of craftsmanship.
+      </p>
+
+      <div class="buttons">
+        <a href="#collection" class="btn btn-dark">
+          Explore Collection
+        </a>
+
+        <a href="#story" class="btn btn-light">
+          Our Story
+        </a>
+      </div>
+
+    </div>
+
+    <div class="right">
+
+      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop">
+
+      <div class="floating-card">
+        <h3>Nile Clay</h3>
+
+        <p>
+          Inspired by ancient Egyptian pottery traditions and reimagined through modern luxury design.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="story" id="story">
+
+    <div>
+
+      <div class="section-title">
+        OUR STORY
+      </div>
+
+      <h2>
+        6,000 years<br>
+        of Egyptian hands.
+      </h2>
+
+      <p>
+        Egypt was among the first civilizations on earth to shape clay into daily life.
+        From the banks of the Nile, generations of artisans carried the same material through
+        Pharaonic, Nubian, Greek, Roman, Islamic and Ottoman eras.
+      </p>
+
+      <p>
+        PERENNIL continues this legacy through contemporary handmade pottery crafted in Egypt.
+        Every piece reflects the memory of the river, the warmth of the kiln and the continuity
+        of human hands shaping earth into culture.
+      </p>
+
+    </div>
+
+    <div class="story-image">
+
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1400&auto=format&fit=crop">
+
+      <div class="story-card">
+
+        <h3>Aswan Clay</h3>
+
+        <p>
+          Sourced from the same land that shaped Egyptian pottery traditions for millennia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="future">
+
+    <div class="section-title">
+      THE FUTURE OF EGYPTIAN CRAFT
+    </div>
+
+    <h2>
+      Ancient material.<br>
+      Modern identity.
+    </h2>
+
+    <p>
+      PERENNIL is building a new global image for Egyptian craftsmanship —
+      one that preserves heritage while speaking the language of modern luxury.
+    </p>
+
+  </section>
+
+  <section class="collection" id="collection">
+
+    <div class="collection-header">
+
+      <div>
+
+        <div class="section-title">
+          COLLECTION
+        </div>
+
+        <h2>
+          Crafted for<br>
+          modern rituals.
+        </h2>
+
+      </div>
+
+      <p style="max-width:480px;line-height:2;font-size:17px;opacity:.78;">
+        A curated collection of handmade pottery inspired by Egyptian heritage and designed for contemporary living.
+      </p>
+
+    </div>
+
+    <div class="collection-grid">
+
+      <div class="product">
+
+        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1400&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <div class="product-title">
+            Nile Mug
+          </div>
+
+          <div class="product-desc">
+            Handcrafted ceramic mug with earthy textures inspired by Nile sediment.
+          </div>
+
+          <div class="product-tag">
+            HANDMADE IN EGYPT
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="product">
+
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <div class="product-title">
+            Desert Bowl
+          </div>
+
+          <div class="product-desc">
+            Organic serving bowl inspired by desert tones and ancient Egyptian forms.
+          </div>
+
+          <div class="product-tag">
+            LIMITED COLLECTION
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="product">
+
+        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1400&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <div class="product-title">
+            Pharaoh Set
+          </div>
+
+          <div class="product-desc">
+            A refined tableware collection combining minimal luxury with Egyptian symbolism.
+          </div>
+
+          <div class="product-tag">
+            ARTISAN SERIES
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
