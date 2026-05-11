@@ -1,745 +1,759 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PERENNIL — Egyptian Clay</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PERENNIL — Egyptian Clay</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body{
-      background:#f4efe8;
-      color:#1e1b18;
-      font-family:'Inter',sans-serif;
-      overflow-x:hidden;
-      scroll-behavior:smooth;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    section{
-      width:100%;
-    }
+body{
+  font-family:'Inter',sans-serif;
+  background:#f5f0e8;
+  color:#1c1815;
+  overflow-x:hidden;
+}
 
-    .hero{
-      min-height:100vh;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-    }
+img{
+  max-width:100%;
+  display:block;
+}
 
-    .left{
-      padding:90px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      background:linear-gradient(to bottom right,#f5efe6,#e6d7c4);
-    }
+a{
+  text-decoration:none;
+}
 
-    .brand{
-      letter-spacing:8px;
-      font-size:13px;
-      margin-bottom:30px;
-      opacity:.7;
-    }
+.hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
 
-    h1{
-      font-family:'Cormorant Garamond',serif;
-      font-size:92px;
-      line-height:.9;
-      font-weight:600;
-      margin-bottom:35px;
-    }
+.hero-left{
+  padding:90px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(135deg,#f7f2ea,#e3d4c1);
+}
 
-    .desc{
-      font-size:18px;
-      line-height:1.9;
-      max-width:520px;
-      opacity:.85;
-      margin-bottom:40px;
-    }
+.brand{
+  letter-spacing:7px;
+  font-size:12px;
+  opacity:.7;
+  margin-bottom:30px;
+}
 
-    .buttons{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:110px;
+  line-height:.88;
+  font-weight:600;
+  margin-bottom:35px;
+}
 
-    .btn{
-      padding:16px 30px;
-      border-radius:999px;
-      text-decoration:none;
-      font-size:14px;
-      transition:.3s ease;
-      border:1px solid #1e1b18;
-    }
+.hero-text{
+  max-width:540px;
+  font-size:18px;
+  line-height:2;
+  opacity:.8;
+  margin-bottom:45px;
+}
 
-    .btn-dark{
-      background:#1e1b18;
-      color:white;
-    }
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
 
-    .btn-light{
-      color:#1e1b18;
-    }
+.btn{
+  padding:17px 34px;
+  border-radius:999px;
+  transition:.3s ease;
+  font-size:14px;
+  letter-spacing:1px;
+}
 
-    .btn:hover{
-      transform:translateY(-2px);
-      opacity:.9;
-    }
+.btn-dark{
+  background:#1c1815;
+  color:white;
+}
 
-    .right{
-      position:relative;
-      overflow:hidden;
-    }
+.btn-light{
+  border:1px solid #1c1815;
+  color:#1c1815;
+}
 
-    .right img{
-      width:100%;
-      height:100vh;
-      object-fit:cover;
-    }
+.btn:hover{
+  transform:translateY(-3px);
+}
 
-    .floating-card{
-      position:absolute;
-      bottom:40px;
-      left:40px;
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(10px);
-      padding:24px;
-      border-radius:24px;
-      width:320px;
-      box-shadow:0 10px 30px rgba(0,0,0,.08);
-    }
+.hero-right{
+  position:relative;
+}
 
-    .floating-card h3{
-      font-family:'Cormorant Garamond',serif;
-      font-size:34px;
-      margin-bottom:12px;
-    }
+.hero-right img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .floating-card p{
-      line-height:1.8;
-      font-size:14px;
-      opacity:.8;
-    }
+.glass-card{
+  position:absolute;
+  left:40px;
+  bottom:40px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(12px);
+  padding:24px;
+  border-radius:24px;
+  width:320px;
+}
 
-    .story{
-      background:#f8f4ef;
-      padding:120px 8%;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:70px;
-      align-items:center;
-    }
+.glass-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;
+  margin-bottom:10px;
+}
 
-    .section-title{
-      letter-spacing:6px;
-      font-size:12px;
-      margin-bottom:20px;
-      opacity:.6;
-    }
+.glass-card p{
+  line-height:1.8;
+  opacity:.75;
+  font-size:14px;
+}
 
-    h2{
-      font-family:'Cormorant Garamond',serif;
-      font-size:72px;
-      line-height:.95;
-      margin-bottom:30px;
-      font-weight:600;
-    }
+.section{
+  padding:120px 8%;
+}
 
-    .story p{
-      font-size:18px;
-      line-height:2;
-      opacity:.82;
-      margin-bottom:25px;
-    }
+.story{
+  background:#f9f5ef;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
 
-    .story-image{
-      position:relative;
-    }
+.section-label{
+  letter-spacing:5px;
+  font-size:12px;
+  opacity:.55;
+  margin-bottom:20px;
+}
 
-    .story-image img{
-      width:100%;
-      height:720px;
-      object-fit:cover;
-      border-radius:30px;
-      box-shadow:0 20px 50px rgba(0,0,0,.12);
-    }
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:78px;
+  line-height:.95;
+  margin-bottom:30px;
+  font-weight:600;
+}
 
-    .story-card{
-      position:absolute;
-      bottom:30px;
-      right:30px;
-      background:rgba(255,255,255,.92);
-      padding:28px;
-      border-radius:24px;
-      width:280px;
-    }
+.section-text{
+  font-size:18px;
+  line-height:2;
+  opacity:.8;
+  margin-bottom:24px;
+}
 
-    .story-card h3{
-      font-family:'Cormorant Garamond',serif;
-      font-size:42px;
-      margin-bottom:10px;
-    }
+.story-image{
+  position:relative;
+}
 
-    .future{
-      background:#1d1a17;
-      color:white;
-      padding:120px 8%;
-      text-align:center;
-    }
+.story-image img{
+  width:100%;
+  height:760px;
+  object-fit:cover;
+  border-radius:32px;
+}
 
-    .future h2{
-      font-size:84px;
-    }
+.story-badge{
+  position:absolute;
+  right:30px;
+  bottom:30px;
+  background:rgba(255,255,255,.92);
+  padding:24px;
+  border-radius:24px;
+  width:260px;
+}
 
-    .future p{
-      max-width:850px;
-      margin:auto;
-      font-size:20px;
-      line-height:2;
-      opacity:.8;
-    }
+.story-badge h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;
+  margin-bottom:8px;
+}
 
-    .collection{
-      background:#efe7dc;
-      padding:120px 8%;
-    }
+.story-badge p{
+  line-height:1.8;
+  opacity:.7;
+  font-size:14px;
+}
 
-    .collection-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      margin-bottom:60px;
-      gap:20px;
-      flex-wrap:wrap;
-    }
+.future{
+  background:#171412;
+  color:white;
+  text-align:center;
+}
 
-    .collection-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
-    }
+.future .section-title{
+  font-size:88px;
+}
 
-    .product{
-      background:white;
-      border-radius:30px;
-      overflow:hidden;
-      box-shadow:0 12px 35px rgba(0,0,0,.06);
-      transition:.3s ease;
-    }
+.future p{
+  max-width:850px;
+  margin:auto;
+  line-height:2;
+  opacity:.8;
+  font-size:20px;
+}
 
-    .product:hover{
-      transform:translateY(-6px);
-    }
+.collection{
+  background:#efe4d5;
+}
 
-    .product img{
-      width:100%;
-      height:360px;
-      object-fit:cover;
-    }
+.collection-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+  margin-bottom:60px;
+  flex-wrap:wrap;
+}
 
-    .product-content{
-      padding:28px;
-    }
+.collection-top p{
+  max-width:500px;
+  line-height:2;
+  opacity:.75;
+}
 
-    .product-title{
-      font-family:'Cormorant Garamond',serif;
-      font-size:40px;
-      margin-bottom:10px;
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
 
-    .product-desc{
-      opacity:.7;
-      line-height:1.8;
-      font-size:15px;
-      margin-bottom:18px;
-    }
+.product{
+  background:white;
+  border-radius:30px;
+  overflow:hidden;
+  transition:.35s ease;
+  box-shadow:0 12px 35px rgba(0,0,0,.06);
+}
 
-    .product-tag{
-      font-size:14px;
-      letter-spacing:2px;
-      opacity:.6;
-    }
+.product:hover{
+  transform:translateY(-8px);
+}
 
-    .concierge{
-      background:#111;
-      color:#f5f1ea;
-      padding:120px 8%;
-    }
+.product img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+}
 
-    .concierge-wrap{
-      max-width:1100px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-    }
+.product-content{
+  padding:28px;
+}
 
-    .chat-container{
-      background:#1b1b1b;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:30px;
-      padding:30px;
-      box-shadow:0 20px 50px rgba(0,0,0,.25);
-    }
+.product-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  margin-bottom:10px;
+}
 
-    #chat-box{
-      height:420px;
-      overflow-y:auto;
-      margin-bottom:25px;
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
+.product-text{
+  line-height:1.8;
+  opacity:.72;
+  margin-bottom:18px;
+}
 
-    .bot-message{
-      background:#2a2a2a;
-      padding:18px;
-      border-radius:18px 18px 18px 4px;
-      max-width:85%;
-      line-height:1.8;
-      font-size:15px;
-    }
+.product-tag{
+  letter-spacing:2px;
+  font-size:13px;
+  opacity:.55;
+}
 
-    .user-message{
-      background:#d8c7b2;
-      color:#111;
-      padding:18px;
-      border-radius:18px 18px 4px 18px;
-      max-width:85%;
-      align-self:flex-end;
-      line-height:1.8;
-      font-size:15px;
-    }
+.concierge{
+  background:#111;
+  color:#f5f0e8;
+}
 
-    .chat-controls{
-      display:flex;
-      gap:14px;
-    }
+.concierge-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
 
-    #user-input{
-      flex:1;
-      padding:18px;
-      border:none;
-      border-radius:18px;
-      background:#2a2a2a;
-      color:white;
-      font-size:15px;
-      outline:none;
-    }
+.concierge-box{
+  background:#1d1d1d;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:32px;
+  padding:28px;
+}
 
-    #send-btn{
-      padding:18px 28px;
-      border:none;
-      border-radius:18px;
-      background:#f5f1ea;
-      color:#111;
-      font-size:14px;
-      cursor:pointer;
-      letter-spacing:1px;
-    }
+.chat-box{
+  height:420px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-bottom:22px;
+  padding-right:6px;
+}
 
-    @media(max-width:900px){
+.bot-message,
+.user-message{
+  max-width:85%;
+  padding:18px;
+  line-height:1.8;
+  font-size:15px;
+}
 
-      .hero,
-      .story,
-      .concierge-wrap{
-        grid-template-columns:1fr;
-      }
+.bot-message{
+  background:#2a2a2a;
+  border-radius:20px 20px 20px 4px;
+}
 
-      .left{
-        padding:50px 28px;
-      }
+.user-message{
+  background:#d8c4ad;
+  color:#111;
+  border-radius:20px 20px 4px 20px;
+  align-self:flex-end;
+}
 
-      h1{
-        font-size:62px;
-      }
+.chat-controls{
+  display:flex;
+  gap:14px;
+}
 
-      h2{
-        font-size:52px;
-      }
+.chat-controls input{
+  flex:1;
+  border:none;
+  background:#2a2a2a;
+  color:white;
+  padding:18px;
+  border-radius:18px;
+  outline:none;
+  font-size:15px;
+}
 
-      .future h2{
-        font-size:58px;
-      }
+.chat-controls button{
+  border:none;
+  padding:18px 28px;
+  border-radius:18px;
+  cursor:pointer;
+  background:#f5f0e8;
+  color:#111;
+  font-size:14px;
+  letter-spacing:1px;
+}
 
-      .right img{
-        height:60vh;
-      }
+.footer{
+  background:#151210;
+  color:#c9c0b5;
+  padding:40px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
 
-      .story-image img{
-        height:500px;
-      }
+.footer a{
+  color:#c9c0b5;
+}
 
-      .floating-card,
-      .story-card{
-        width:auto;
-        left:20px;
-        right:20px;
-      }
+@media(max-width:950px){
 
-    }
+  .hero,
+  .story,
+  .concierge-wrap{
+    grid-template-columns:1fr;
+  }
 
-  </style>
+  .hero-left{
+    padding:60px 28px;
+  }
 
+  .hero-title{
+    font-size:68px;
+  }
+
+  .section-title{
+    font-size:54px;
+  }
+
+  .future .section-title{
+    font-size:60px;
+  }
+
+  .story-image img{
+    height:520px;
+  }
+
+  .glass-card,
+  .story-badge{
+    left:20px;
+    right:20px;
+    width:auto;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
+<section class="hero">
 
-```
-<div class="left">
+<div class="hero-left">
 
-  <div class="brand">
-    PERENNIL · EGYPT
-  </div>
+<div class="brand">
+PERENNIL · EGYPT
+</div>
 
-  <h1>
-    Clay.<br>
-    Civilization.<br>
-    Legacy.
-  </h1>
+<h1 class="hero-title">
+Clay.<br>
+Civilization.<br>
+Legacy.
+</h1>
 
-  <p class="desc">
-    Handmade Egyptian pottery shaped from Nile-inspired clay and finished by hand.
-    A contemporary luxury brand rooted in six thousand years of craftsmanship.
-  </p>
+<p class="hero-text">
+A contemporary Egyptian pottery house inspired by six thousand years of craftsmanship,
+Nile clay traditions, and modern luxury aesthetics.
+</p>
 
-  <div class="buttons">
-    <a href="#collection" class="btn btn-dark">
-      Explore Collection
-    </a>
-
-    <a href="#story" class="btn btn-light">
-      Our Story
-    </a>
-  </div>
+<div class="hero-buttons">
+<a href="#collection" class="btn btn-dark">Explore Collection</a>
+<a href="#story" class="btn btn-light">Our Story</a>
+</div>
 
 </div>
 
-<div class="right">
+<div class="hero-right">
 
-  <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop">
 
-  <div class="floating-card">
-    <h3>Nile Clay</h3>
-
-    <p>
-      Inspired by ancient Egyptian pottery traditions and reimagined through modern luxury design.
-    </p>
-  </div>
+<div class="glass-card">
+<h3>Nile Clay</h3>
+<p>
+Inspired by ancient Egyptian pottery traditions and reimagined through contemporary luxury design.
+</p>
+</div>
 
 </div>
-```
 
-  </section>
+</section>
 
-  <section class="story" id="story">
+<section class="story section" id="story">
 
-```
 <div>
 
-  <div class="section-title">
-    OUR STORY
-  </div>
+<div class="section-label">
+OUR STORY
+</div>
 
-  <h2>
-    6,000 years<br>
-    of Egyptian hands.
-  </h2>
+<h2 class="section-title">
+6,000 years<br>
+of Egyptian hands.
+</h2>
 
-  <p>
-    Egypt was among the first civilizations on earth to shape clay into daily life.
-    From the banks of the Nile, generations of artisans carried the same material through
-    Pharaonic, Nubian, Greek, Roman, Islamic and Ottoman eras.
-  </p>
+<p class="section-text">
+Egypt was among the first civilizations on earth to shape clay into daily life.
+From the banks of the Nile, generations of artisans carried the same material
+through Pharaonic, Nubian, Greek, Roman, Islamic and Ottoman eras.
+</p>
 
-  <p>
-    PERENNIL continues this legacy through contemporary handmade pottery crafted in Egypt.
-    Every piece reflects the memory of the river, the warmth of the kiln and the continuity
-    of human hands shaping earth into culture.
-  </p>
+<p class="section-text">
+PERENNIL continues this legacy through contemporary handmade pottery crafted in Egypt.
+Every piece reflects the memory of the river, the warmth of the kiln and the continuity
+of human hands shaping earth into culture.
+</p>
 
 </div>
 
 <div class="story-image">
 
-  <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1400&auto=format&fit=crop">
 
-  <div class="story-card">
-
-    <h3>Aswan Clay</h3>
-
-    <p>
-      Sourced from the same land that shaped Egyptian pottery traditions for millennia.
-    </p>
-
-  </div>
-
-</div>
-```
-
-  </section>
-
-  <section class="future">
-
-```
-<div class="section-title">
-  THE FUTURE OF EGYPTIAN CRAFT
+<div class="story-badge">
+<h3>Aswan Clay</h3>
+<p>
+Sourced from the same land that shaped Egyptian pottery traditions for millennia.
+</p>
 </div>
 
-<h2>
-  Ancient material.<br>
-  Modern identity.
+</div>
+
+</section>
+
+<section class="future section">
+
+<div class="section-label">
+THE FUTURE OF EGYPTIAN CRAFT
+</div>
+
+<h2 class="section-title">
+Ancient material.<br>
+Modern identity.
 </h2>
 
 <p>
-  PERENNIL is building a new global image for Egyptian craftsmanship —
-  one that preserves heritage while speaking the language of modern luxury.
+PERENNIL is building a new global image for Egyptian craftsmanship —
+one that preserves heritage while speaking the language of modern luxury.
 </p>
-```
 
-  </section>
+</section>
 
-  <section class="collection" id="collection">
+<section class="collection section" id="collection">
 
-```
-<div class="collection-header">
+<div class="collection-top">
 
-  <div>
+<div>
+<div class="section-label">COLLECTION</div>
 
-    <div class="section-title">
-      COLLECTION
-    </div>
+<h2 class="section-title">
+Crafted for<br>
+modern rituals.
+</h2>
+</div>
 
-    <h2>
-      Crafted for<br>
-      modern rituals.
-    </h2>
-
-  </div>
-
-  <p style="max-width:480px;line-height:2;font-size:17px;opacity:.78;">
-    A curated collection of handmade pottery inspired by Egyptian heritage and designed for contemporary living.
-  </p>
+<p>
+A curated collection of handmade pottery inspired by Egyptian heritage and designed for contemporary living.
+</p>
 
 </div>
 
-<div class="collection-grid">
+<div class="products">
 
-  <div class="product">
+<div class="product">
 
-    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1400&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1400&auto=format&fit=crop">
 
-    <div class="product-content">
+<div class="product-content">
 
-      <div class="product-title">
-        Nile Mug
-      </div>
+<div class="product-title">
+Nile Mug
+</div>
 
-      <div class="product-desc">
-        Handcrafted ceramic mug with earthy textures inspired by Nile sediment.
-      </div>
+<div class="product-text">
+Handcrafted ceramic mug with earthy textures inspired by Nile sediment.
+</div>
 
-      <div class="product-tag">
-        HANDMADE IN EGYPT
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop">
-
-    <div class="product-content">
-
-      <div class="product-title">
-        Desert Bowl
-      </div>
-
-      <div class="product-desc">
-        Organic serving bowl inspired by desert tones and ancient Egyptian forms.
-      </div>
-
-      <div class="product-tag">
-        LIMITED COLLECTION
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="product">
-
-    <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1400&auto=format&fit=crop">
-
-    <div class="product-content">
-
-      <div class="product-title">
-        Pharaoh Set
-      </div>
-
-      <div class="product-desc">
-        A refined tableware collection combining minimal luxury with Egyptian symbolism.
-      </div>
-
-      <div class="product-tag">
-        ARTISAN SERIES
-      </div>
-
-    </div>
-
-  </div>
+<div class="product-tag">
+HANDMADE IN EGYPT
+</div>
 
 </div>
-```
 
-  </section>
+</div>
 
-  <section class="concierge" id="concierge">
+<div class="product">
 
-```
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop">
+
+<div class="product-content">
+
+<div class="product-title">
+Desert Bowl
+</div>
+
+<div class="product-text">
+Organic serving bowl inspired by desert tones and ancient Egyptian forms.
+</div>
+
+<div class="product-tag">
+LIMITED COLLECTION
+</div>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1400&auto=format&fit=crop">
+
+<div class="product-content">
+
+<div class="product-title">
+Pharaoh Set
+</div>
+
+<div class="product-text">
+A refined tableware collection combining minimal luxury with Egyptian symbolism.
+</div>
+
+<div class="product-tag">
+ARTISAN SERIES
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="concierge section" id="concierge">
+
 <div class="concierge-wrap">
 
-  <div>
+<div>
 
-    <div class="section-title">
-      AI CONCIERGE
-    </div>
+<div class="section-label">
+AI CONCIERGE
+</div>
 
-    <h2>
-      Ask about<br>
-      Egyptian pottery.
-    </h2>
+<h2 class="section-title">
+Ask about<br>
+Egyptian pottery.
+</h2>
 
-    <p style="font-size:19px;line-height:2;opacity:.78;max-width:520px;">
-      Explore the meaning behind every collection, discover the heritage of Nile clay,
-      and experience a modern interpretation of Egyptian craftsmanship through an interactive concierge.
-    </p>
-
-  </div>
-
-  <div class="chat-container">
-
-    <div id="chat-box">
-
-      <div class="bot-message">
-        Welcome to Perennil. Ask me about Egyptian pottery, Nile clay, collections, shipping, or craftsmanship.
-      </div>
-
-    </div>
-
-    <div class="chat-controls">
-
-      <input
-        id="user-input"
-        type="text"
-        placeholder="Ask something..."
-      >
-
-      <button id="send-btn">
-        SEND
-      </button>
-
-    </div>
-
-  </div>
+<p class="section-text">
+Discover the heritage behind every collection and experience an interactive luxury concierge inspired by Egyptian craftsmanship.
+</p>
 
 </div>
-```
 
-  </section>
+<div class="concierge-box">
 
-  <script>
+<div class="chat-box" id="chat-box">
 
-    const aiReplies = [
-      "Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.",
-      "Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.",
-      "Our collections are inspired by Nile clay and contemporary luxury aesthetics.",
-      "Each object is designed to carry both artistic value and cultural memory.",
-      "Perennil follows a slow-crafted philosophy rather than mass production.",
-      "The textures and earthy tones are inspired by Egyptian desert landscapes and Nile sediment.",
-      "Our future collections aim to reinterpret ancient Egyptian craftsmanship through modern design."
-    ];
+<div class="bot-message">
+Welcome to Perennil. Ask me about Egyptian pottery, Nile clay, collections, shipping, or craftsmanship.
+</div>
 
-    function sendMessage() {
+</div>
 
-      const input = document.getElementById('user-input');
-      const chatBox = document.getElementById('chat-box');
+<div class="chat-controls">
 
-      const text = input.value.trim();
+<input
+type="text"
+id="user-input"
+placeholder="Ask something..."
+>
 
-      if(text === '') return;
+<button id="send-btn">
+SEND
+</button>
 
-      const userMessage = document.createElement('div');
+</div>
 
-      userMessage.className = 'user-message';
-      userMessage.innerText = text;
+</div>
 
-      chatBox.appendChild(userMessage);
+</div>
 
-      input.value = '';
+</section>
 
-      chatBox.scrollTop = chatBox.scrollHeight;
+<footer class="footer">
 
-      const typing = document.createElement('div');
+<div>
+PERENNIL · Egyptian Clay House
+</div>
 
-      typing.className = 'bot-message';
-      typing.innerText = 'Typing...';
+<div>
+<a href="mailto:social@alden-eg.com">
+social@alden-eg.com
+</a>
+</div>
 
-      chatBox.appendChild(typing);
+</footer>
 
-      chatBox.scrollTop = chatBox.scrollHeight;
+<script>
 
-      setTimeout(() => {
+const replies = [
+  "Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.",
+  "Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.",
+  "Our collections are inspired by Nile clay and contemporary luxury aesthetics.",
+  "Each object is designed to carry both artistic value and cultural memory.",
+  "Perennil follows a slow-crafted philosophy rather than mass production.",
+  "The textures and earthy tones are inspired by Egyptian desert landscapes and Nile sediment.",
+  "Our future collections aim to reinterpret ancient Egyptian craftsmanship through modern design."
+];
 
-        typing.remove();
+function sendMessage(){
 
-        const botMessage = document.createElement('div');
+  const input = document.getElementById('user-input');
+  const chatBox = document.getElementById('chat-box');
 
-        botMessage.className = 'bot-message';
+  const text = input.value.trim();
 
-        const randomReply = aiReplies[Math.floor(Math.random() * aiReplies.length)];
+  if(text === '') return;
 
-        botMessage.innerText = randomReply;
+  const userMessage = document.createElement('div');
 
-        chatBox.appendChild(botMessage);
+  userMessage.className = 'user-message';
+  userMessage.innerText = text;
 
-        chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.appendChild(userMessage);
 
-      }, 900);
+  input.value = '';
 
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  const typing = document.createElement('div');
+
+  typing.className = 'bot-message';
+  typing.innerText = 'Typing...';
+
+  chatBox.appendChild(typing);
+
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  setTimeout(() => {
+
+    typing.remove();
+
+    const botMessage = document.createElement('div');
+
+    botMessage.className = 'bot-message';
+
+    const randomReply =
+      replies[Math.floor(Math.random() * replies.length)];
+
+    botMessage.innerText = randomReply;
+
+    chatBox.appendChild(botMessage);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+  }, 1000);
+
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+
+  const sendBtn = document.getElementById('send-btn');
+  const input = document.getElementById('user-input');
+
+  sendBtn.addEventListener('click', sendMessage);
+
+  input.addEventListener('keydown', function(event){
+
+    if(event.key === 'Enter'){
+      event.preventDefault();
+      sendMessage();
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+  });
 
-      const sendBtn = document.getElementById('send-btn');
-      const input = document.getElementById('user-input');
+});
 
-      sendBtn.addEventListener('click', sendMessage);
-
-      input.addEventListener('keydown', function(event) {
-
-        if(event.key === 'Enter') {
-          event.preventDefault();
-          sendMessage();
-        }
-
-      });
-
-    });
-
-  </script>
+</script>
 
 </body>
 </html>
