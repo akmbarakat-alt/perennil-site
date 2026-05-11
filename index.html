@@ -617,6 +617,46 @@
 
 <script>
 
+<script>
+
+const replies = {
+
+  default: [
+    "Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.",
+    "Every collection reflects a dialogue between ancient material and modern luxury.",
+    "Our philosophy is rooted in craftsmanship, texture, and timeless Egyptian identity."
+  ],
+
+  clay: [
+    "Our collections are inspired by Nile and Aswan clay traditions that shaped Egyptian pottery for thousands of years.",
+    "Egyptian clay carries a unique mineral texture historically associated with Nile pottery culture.",
+    "The clay narrative is central to Perennil’s identity and artistic language."
+  ],
+
+  shipping: [
+    "Perennil plans to offer both local Egyptian delivery and international shipping.",
+    "International delivery will become available as the collections expand globally.",
+    "Shipping timelines depend on handcrafted production and collection availability."
+  ],
+
+  price: [
+    "Pricing reflects handcrafted production, artisan finishing, and limited collection philosophy.",
+    "Each piece is individually finished, making every object slightly unique.",
+    "Perennil follows a slow-crafted luxury approach rather than mass production."
+  ],
+
+  egypt: [
+    "Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.",
+    "Egyptian pottery evolved through Pharaonic, Nubian, Islamic, and Mediterranean civilizations.",
+    "The continuity of Egyptian craft traditions is part of what defines Perennil."
+  ]
+
+};
+
+function randomReply(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
 function sendMessage() {
 
   const input = document.getElementById('user-input');
@@ -643,7 +683,25 @@ function sendMessage() {
 
   input.value = '';
 
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  const typing = document.createElement('div');
+
+  typing.style.background = '#2a2a2a';
+  typing.style.padding = '18px';
+  typing.style.borderRadius = '18px 18px 18px 4px';
+  typing.style.maxWidth = '120px';
+  typing.style.fontSize = '15px';
+
+  typing.innerText = 'Typing...';
+
+  chatBox.appendChild(typing);
+
+  chatBox.scrollTop = chatBox.scrollHeight;
+
   setTimeout(() => {
+
+    typing.remove();
 
     const botMessage = document.createElement('div');
 
@@ -654,22 +712,24 @@ function sendMessage() {
     botMessage.style.lineHeight = '1.8';
     botMessage.style.fontSize = '15px';
 
-    let reply = 'Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.';
+    let reply = randomReply(replies.default);
 
-    if(text.toLowerCase().includes('clay')) {
-      reply = 'Our collections are inspired by Nile and Aswan clay traditions that shaped Egyptian pottery for thousands of years.';
+    const lower = text.toLowerCase();
+
+    if(lower.includes('clay')) {
+      reply = randomReply(replies.clay);
     }
 
-    if(text.toLowerCase().includes('shipping')) {
-      reply = 'Perennil plans to offer both local Egyptian delivery and international shipping.';
+    else if(lower.includes('shipping')) {
+      reply = randomReply(replies.shipping);
     }
 
-    if(text.toLowerCase().includes('price')) {
-      reply = 'Pricing reflects handcrafted production, artisan finishing, and limited collection philosophy.';
+    else if(lower.includes('price')) {
+      reply = randomReply(replies.price);
     }
 
-    if(text.toLowerCase().includes('egypt')) {
-      reply = 'Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.';
+    else if(lower.includes('egypt')) {
+      reply = randomReply(replies.egypt);
     }
 
     botMessage.innerText = reply;
@@ -678,10 +738,19 @@ function sendMessage() {
 
     chatBox.scrollTop = chatBox.scrollHeight;
 
-  }, 600);
+  }, 1200);
 
 }
 
+document.getElementById('user-input').addEventListener('keypress', function(e) {
+
+  if(e.key === 'Enter') {
+    sendMessage();
+  }
+
+});
+
+</script>
 </script>
 </section>
   
