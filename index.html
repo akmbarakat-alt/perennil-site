@@ -305,16 +305,19 @@ h2 em {
   color: var(--clay-dark);
 }
 
-/* ─────────────────────────── STORY ─────────────────────────── */
+/* ─────────────────────────── STORY PROSE ─────────────────────────── */
+
+/* ─────────────────────────── STORY PROSE ─────────────────────────── */
 .story {
   padding: 160px 8% 140px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .story-intro {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .story-intro h2 {
@@ -333,32 +336,62 @@ h2 em {
   line-height: 1.6;
 }
 
-.story-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
+.story-prose {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.story-grid p {
-  font-size: 19px;
-  line-height: 1.85;
-  margin-bottom: 24px;
-  color: rgba(26,26,26,0.85);
+.story-prose p {
+  font-size: 20px;
+  line-height: 1.95;
+  margin-bottom: 32px;
+  color: rgba(26,26,26,0.82);
 }
 
-.story-grid p:first-child::first-letter {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 84px;
-  float: left;
-  line-height: 0.85;
-  padding: 6px 14px 0 0;
-  font-weight: 400;
+.story-prose p.story-pull {
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 1.5;
   color: var(--clay-dark);
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.story-divider {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--clay), transparent);
+  margin: 56px auto;
+}
+
+.story-stamp {
+  font-family: 'Marcellus', serif !important;
+  font-size: 15px !important;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--char) !important;
+  opacity: 0.6;
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 20px 0 !important;
+  margin: 40px 0 !important;
+}
+
+.story-prose p:last-child {
+  font-family: 'Cormorant Infant', serif;
+  font-style: italic;
+  font-size: 26px !important;
+  line-height: 1.5;
+  color: var(--clay-dark);
+  text-align: center;
+  margin-bottom: 0;
 }
 
 @media (max-width: 800px) {
-  .story-grid { grid-template-columns: 1fr; gap: 24px; }
+  .story-prose p { font-size: 18px; }
+  .story-prose p.story-pull { font-size: 24px; }
   .story { padding: 110px 28px 80px; }
 }
 
@@ -908,21 +941,55 @@ footer .arabic {
 <!-- ─────────────────────────── STORY ─────────────────────────── -->
 <section class="story" id="story">
   <div class="story-intro reveal">
-    <div class="section-eyebrow">Origin</div>
-    <h2>Egypt did not <em>inspire</em><br>this brand. Egypt <em>produced</em> it.</h2>
-    <p class="lead">Same river. Same clay. Same hands passing something forward.</p>
+    <div class="section-eyebrow">The Story</div>
+    <h2>Some things survive<br>because they <em>refuse</em> to end.</h2>
+    <p class="lead">This is not a story about pottery. It is a story about what people choose to carry when everything else is taken.</p>
   </div>
 
-  <div class="story-grid reveal">
-    <div>
-      <p>Six thousand years ago, the first Egyptian hands pulled clay from the Nile and shaped it into vessels for daily life. Every civilization that followed — Pharaonic, Nubian, Greek, Roman, Islamic, Ottoman — continued the same act.</p>
-      <p>The Nubians burnished the clay with stone until it sealed itself — no glaze, just mastery. The Islamic period brought true glazing — the clay became art and waterproof simultaneously. The Ottoman period refined it further. Each generation added one layer to what the previous one built.</p>
-    </div>
-    <div>
-      <p>The story never stopped. It just waited for the next pair of hands.</p>
-      <p>PERENNIL is those hands. The founder is Egyptian — carrying the same DNA as every <em>qed</em>, every <em>fakhkhārī</em>, every <em>sannā'ī</em> who ever sat at a wheel in Fustat or Aswan or Qena.</p>
-      <p>This is not a revival of a dead craft. It is the continuation of a living one.</p>
-    </div>
+  <div class="story-prose reveal">
+
+    <p class="story-pull">The Nile has been depositing clay on Egyptian banks for twelve thousand years. Long before the first dynasty, before the first pharaoh, before anyone thought to call this place Egypt — the river was already building the material that would carry every civilization forward. The same clay. The same water. The same slow patience of a river that knows it will outlast everything built on its banks.</p>
+
+    <p>Six thousand years ago, the first hands pulled that clay from the earth and shaped it into vessels for daily life. Not art. Not ceremony. Bowls to eat from. Cups to drink from. The most ordinary objects in the world — and somehow, the ones that survived every empire that followed.</p>
+
+    <p>Every civilization that came after continued the same act. Pharaonic hands, Nubian hands, Greek hands, Roman hands, Arab hands, Ottoman hands. The empires rose and fell. The clay remained. Each generation added one layer to what the previous one built — a glaze, a motif, a new color drawn from the desert — and then passed it forward without ceremony, the way you pass a cup across a table.</p>
+
+    <div class="story-divider"></div>
+
+    <p class="story-pull">Then came 1964.</p>
+
+    <p>The Aswan High Dam was built, and the Nile was redirected, and the water rose, and fifty thousand Nubian people were told they had ninety days to leave the land their families had lived on for four thousand years. Whole villages went underwater. Ancient temples were dismantled stone by stone and moved. The soil that had grown their food, the riverbank where they had pulled their clay, the ground that held their ancestors — all of it swallowed by a reservoir that would be called Lake Nasser, as if naming it after a man could make the loss smaller.</p>
+
+    <p>The Nubians were relocated to the desert. They were given concrete houses in rows, far from the river, surrounded by sand instead of silt. Everything that had defined them — the Nile, the clay, the slow green edge of the water — was gone.</p>
+
+    <p>So they did something that no government decree could account for.</p>
+
+    <p>They painted their walls.</p>
+
+    <div class="story-divider"></div>
+
+    <p>Thirty-five thousand new homes, built in the desert far from everything they had known. And on every wall — triangles, chevrons, crescents, palms, fish, birds — the same geometric vocabulary their grandmothers had painted on walls beside the Nile. The same patterns that archaeologists had found on walls near Kerma, four thousand years old. Not copied from photographs. Not reconstructed from records. Simply remembered. Passed hand to hand, generation to generation, so deeply embedded in Nubian identity that not even displacement could dislodge it.</p>
+
+    <p>They took the land. They could not take the pattern.</p>
+
+    <p>That is what it means for something to survive. Not preserved behind glass. Not archived in a museum catalog. Alive — in the hands of the people who carry it, painted fresh every year on walls that are still being built today.</p>
+
+    <div class="story-divider"></div>
+
+    <p class="story-pull">PERENNIL begins here.</p>
+
+    <p>Not with a design concept. Not with a market opportunity. With the understanding that Egypt holds one of the oldest continuous visual traditions on earth — Nubian geometric, Islamic arabesque, Pharaonic symbolism, Coptic scripture, Ottoman floral — twelve civilizations across six thousand years, each one adding its layer to the same clay, the same river, the same unbroken line — and that this tradition has never once been placed at the level of luxury it deserves.</p>
+
+    <p>Turkish pottery has Iznik. Moroccan ceramics have their global identity. Persian tiles are collected in museums on every continent. Egyptian pottery is six thousand years old and the world has barely heard its name.</p>
+
+    <p>That is the gap PERENNIL exists to close.</p>
+
+    <p>Every piece is handmade from Aswan clay — pulled from the same Nile valley where this story begins. Every piece is hand-painted with one civilization's visual language, documented with the precision of a cultural record and the beauty of something made to be used at a table, not displayed in a case. Every piece carries the stamp on its base:</p>
+
+    <p class="story-stamp">PERENNIL &nbsp;·&nbsp; Cairo — est. 2026</p>
+
+    <p>The story never stopped. It just needed the next pair of hands.</p>
+
   </div>
 </section>
 
