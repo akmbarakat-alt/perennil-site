@@ -1,0 +1,29 @@
+# PERENNIL — robots.txt
+# House of the Nile · Cairo — est. 2026
+
+User-agent: *
+Allow: /
+
+# Allow all major search engine and AI crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.alden-eg.com/sitemap.xml
