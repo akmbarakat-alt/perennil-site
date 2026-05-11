@@ -750,8 +750,95 @@ document.getElementById('user-input').addEventListener('keypress', function(e) {
 
 });
 
+```html
+<script>
+
+function sendMessage() {
+
+  const input = document.getElementById('user-input');
+  const chatBox = document.getElementById('chat-box');
+
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  const userMessage = document.createElement('div');
+
+  userMessage.style.background = '#d8c7b2';
+  userMessage.style.color = '#111';
+  userMessage.style.padding = '18px';
+  userMessage.style.borderRadius = '18px 18px 4px 18px';
+  userMessage.style.maxWidth = '85%';
+  userMessage.style.alignSelf = 'flex-end';
+  userMessage.style.lineHeight = '1.8';
+  userMessage.style.fontSize = '15px';
+
+  userMessage.innerText = text;
+
+  chatBox.appendChild(userMessage);
+
+  input.value = '';
+
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  const typing = document.createElement('div');
+
+  typing.style.background = '#2a2a2a';
+  typing.style.padding = '18px';
+  typing.style.borderRadius = '18px 18px 18px 4px';
+
+  typing.innerText = 'Typing...';
+
+  chatBox.appendChild(typing);
+
+  setTimeout(() => {
+
+    typing.remove();
+
+    const botMessage = document.createElement('div');
+
+    botMessage.style.background = '#2a2a2a';
+    botMessage.style.padding = '18px';
+    botMessage.style.borderRadius = '18px 18px 18px 4px';
+    botMessage.style.maxWidth = '85%';
+    botMessage.style.lineHeight = '1.8';
+    botMessage.style.fontSize = '15px';
+
+    const replies = [
+      'Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.',
+      'Egypt holds one of the oldest pottery traditions on earth.',
+      'Our collections are inspired by Nile clay and Egyptian craftsmanship.',
+      'Perennil follows a contemporary luxury approach to Egyptian pottery.'
+    ];
+
+    botMessage.innerText =
+      replies[Math.floor(Math.random() * replies.length)];
+
+    chatBox.appendChild(botMessage);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+  }, 900);
+
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const input = document.getElementById('user-input');
+
+  input.addEventListener('keypress', function(e) {
+
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+
+  });
+
+});
+
 </script>
-</script>
+```
+
 </section>
   
 </body>
