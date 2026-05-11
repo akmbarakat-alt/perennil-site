@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PERENNIL — Egyptian Clay</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -22,10 +24,14 @@
       scroll-behavior:smooth;
     }
 
+    section{
+      width:100%;
+    }
+
     .hero{
       min-height:100vh;
       display:grid;
-      grid-template-columns:1.1fr 0.9fr;
+      grid-template-columns:1.1fr .9fr;
     }
 
     .left{
@@ -121,10 +127,6 @@
       line-height:1.8;
       font-size:14px;
       opacity:.8;
-    }
-
-    section{
-      width:100%;
     }
 
     .story{
@@ -230,6 +232,11 @@
       border-radius:30px;
       overflow:hidden;
       box-shadow:0 12px 35px rgba(0,0,0,.06);
+      transition:.3s ease;
+    }
+
+    .product:hover{
+      transform:translateY(-6px);
     }
 
     .product img{
@@ -261,10 +268,90 @@
       opacity:.6;
     }
 
+    .concierge{
+      background:#111;
+      color:#f5f1ea;
+      padding:120px 8%;
+    }
+
+    .concierge-wrap{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .chat-container{
+      background:#1b1b1b;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 20px 50px rgba(0,0,0,.25);
+    }
+
+    #chat-box{
+      height:420px;
+      overflow-y:auto;
+      margin-bottom:25px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .bot-message{
+      background:#2a2a2a;
+      padding:18px;
+      border-radius:18px 18px 18px 4px;
+      max-width:85%;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .user-message{
+      background:#d8c7b2;
+      color:#111;
+      padding:18px;
+      border-radius:18px 18px 4px 18px;
+      max-width:85%;
+      align-self:flex-end;
+      line-height:1.8;
+      font-size:15px;
+    }
+
+    .chat-controls{
+      display:flex;
+      gap:14px;
+    }
+
+    #user-input{
+      flex:1;
+      padding:18px;
+      border:none;
+      border-radius:18px;
+      background:#2a2a2a;
+      color:white;
+      font-size:15px;
+      outline:none;
+    }
+
+    #send-btn{
+      padding:18px 28px;
+      border:none;
+      border-radius:18px;
+      background:#f5f1ea;
+      color:#111;
+      font-size:14px;
+      cursor:pointer;
+      letter-spacing:1px;
+    }
+
     @media(max-width:900px){
 
       .hero,
-      .story{
+      .story,
+      .concierge-wrap{
         grid-template-columns:1fr;
       }
 
@@ -298,548 +385,361 @@
         left:20px;
         right:20px;
       }
+
     }
 
   </style>
-</head>
 
+</head>
 <body>
 
   <section class="hero">
 
-    <div class="left">
+```
+<div class="left">
 
-      <div class="brand">
-        PERENNIL · EGYPT
-      </div>
+  <div class="brand">
+    PERENNIL · EGYPT
+  </div>
 
-      <h1>
-        Clay.<br>
-        Civilization.<br>
-        Legacy.
-      </h1>
+  <h1>
+    Clay.<br>
+    Civilization.<br>
+    Legacy.
+  </h1>
 
-      <p class="desc">
-        Handmade Egyptian pottery shaped from Nile-inspired clay and finished by hand.
-        A contemporary luxury brand rooted in six thousand years of craftsmanship.
-      </p>
+  <p class="desc">
+    Handmade Egyptian pottery shaped from Nile-inspired clay and finished by hand.
+    A contemporary luxury brand rooted in six thousand years of craftsmanship.
+  </p>
 
-      <div class="buttons">
-        <a href="#collection" class="btn btn-dark">
-          Explore Collection
-        </a>
+  <div class="buttons">
+    <a href="#collection" class="btn btn-dark">
+      Explore Collection
+    </a>
 
-        <a href="#story" class="btn btn-light">
-          Our Story
-        </a>
-      </div>
+    <a href="#story" class="btn btn-light">
+      Our Story
+    </a>
+  </div>
 
-    </div>
+</div>
 
-    <div class="right">
+<div class="right">
 
-      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop">
+  <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1800&auto=format&fit=crop">
 
-      <div class="floating-card">
-        <h3>Nile Clay</h3>
+  <div class="floating-card">
+    <h3>Nile Clay</h3>
 
-        <p>
-          Inspired by ancient Egyptian pottery traditions and reimagined through modern luxury design.
-        </p>
-      </div>
+    <p>
+      Inspired by ancient Egyptian pottery traditions and reimagined through modern luxury design.
+    </p>
+  </div>
 
-    </div>
+</div>
+```
 
   </section>
 
   <section class="story" id="story">
 
-    <div>
+```
+<div>
 
-      <div class="section-title">
-        OUR STORY
-      </div>
+  <div class="section-title">
+    OUR STORY
+  </div>
 
-      <h2>
-        6,000 years<br>
-        of Egyptian hands.
-      </h2>
+  <h2>
+    6,000 years<br>
+    of Egyptian hands.
+  </h2>
 
-      <p>
-        Egypt was among the first civilizations on earth to shape clay into daily life.
-        From the banks of the Nile, generations of artisans carried the same material through
-        Pharaonic, Nubian, Greek, Roman, Islamic and Ottoman eras.
-      </p>
+  <p>
+    Egypt was among the first civilizations on earth to shape clay into daily life.
+    From the banks of the Nile, generations of artisans carried the same material through
+    Pharaonic, Nubian, Greek, Roman, Islamic and Ottoman eras.
+  </p>
 
-      <p>
-        PERENNIL continues this legacy through contemporary handmade pottery crafted in Egypt.
-        Every piece reflects the memory of the river, the warmth of the kiln and the continuity
-        of human hands shaping earth into culture.
-      </p>
+  <p>
+    PERENNIL continues this legacy through contemporary handmade pottery crafted in Egypt.
+    Every piece reflects the memory of the river, the warmth of the kiln and the continuity
+    of human hands shaping earth into culture.
+  </p>
 
-    </div>
+</div>
 
-    <div class="story-image">
+<div class="story-image">
 
-      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1400&auto=format&fit=crop">
+  <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1400&auto=format&fit=crop">
 
-      <div class="story-card">
+  <div class="story-card">
 
-        <h3>Aswan Clay</h3>
+    <h3>Aswan Clay</h3>
 
-        <p>
-          Sourced from the same land that shaped Egyptian pottery traditions for millennia.
-        </p>
+    <p>
+      Sourced from the same land that shaped Egyptian pottery traditions for millennia.
+    </p>
 
-      </div>
+  </div>
 
-    </div>
+</div>
+```
 
   </section>
 
   <section class="future">
 
-    <div class="section-title">
-      THE FUTURE OF EGYPTIAN CRAFT
-    </div>
+```
+<div class="section-title">
+  THE FUTURE OF EGYPTIAN CRAFT
+</div>
 
-    <h2>
-      Ancient material.<br>
-      Modern identity.
-    </h2>
+<h2>
+  Ancient material.<br>
+  Modern identity.
+</h2>
 
-    <p>
-      PERENNIL is building a new global image for Egyptian craftsmanship —
-      one that preserves heritage while speaking the language of modern luxury.
-    </p>
+<p>
+  PERENNIL is building a new global image for Egyptian craftsmanship —
+  one that preserves heritage while speaking the language of modern luxury.
+</p>
+```
 
   </section>
 
   <section class="collection" id="collection">
 
-    <div class="collection-header">
+```
+<div class="collection-header">
 
-      <div>
+  <div>
 
-        <div class="section-title">
-          COLLECTION
-        </div>
-
-        <h2>
-          Crafted for<br>
-          modern rituals.
-        </h2>
-
-      </div>
-
-      <p style="max-width:480px;line-height:2;font-size:17px;opacity:.78;">
-        A curated collection of handmade pottery inspired by Egyptian heritage and designed for contemporary living.
-      </p>
-
+    <div class="section-title">
+      COLLECTION
     </div>
 
-    <div class="collection-grid">
+    <h2>
+      Crafted for<br>
+      modern rituals.
+    </h2>
 
-      <div class="product">
+  </div>
 
-        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1400&auto=format&fit=crop">
+  <p style="max-width:480px;line-height:2;font-size:17px;opacity:.78;">
+    A curated collection of handmade pottery inspired by Egyptian heritage and designed for contemporary living.
+  </p>
 
-        <div class="product-content">
+</div>
 
-          <div class="product-title">
-            Nile Mug
-          </div>
+<div class="collection-grid">
 
-          <div class="product-desc">
-            Handcrafted ceramic mug with earthy textures inspired by Nile sediment.
-          </div>
+  <div class="product">
 
-          <div class="product-tag">
-            HANDMADE IN EGYPT
-          </div>
+    <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=1400&auto=format&fit=crop">
 
-        </div>
+    <div class="product-content">
 
+      <div class="product-title">
+        Nile Mug
       </div>
 
-      <div class="product">
-
-        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop">
-
-        <div class="product-content">
-
-          <div class="product-title">
-            Desert Bowl
-          </div>
-
-          <div class="product-desc">
-            Organic serving bowl inspired by desert tones and ancient Egyptian forms.
-          </div>
-
-          <div class="product-tag">
-            LIMITED COLLECTION
-          </div>
-
-        </div>
-
+      <div class="product-desc">
+        Handcrafted ceramic mug with earthy textures inspired by Nile sediment.
       </div>
 
-      <div class="product">
-
-        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1400&auto=format&fit=crop">
-
-        <div class="product-content">
-
-          <div class="product-title">
-            Pharaoh Set
-          </div>
-
-          <div class="product-desc">
-            A refined tableware collection combining minimal luxury with Egyptian symbolism.
-          </div>
-
-          <div class="product-tag">
-            ARTISAN SERIES
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
- <section id="concierge" style="background:#111;color:#f5f1ea;padding:120px 8%;">
-
-  <div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-
-    <div>
-
-      <div style="letter-spacing:5px;font-size:12px;opacity:.55;margin-bottom:20px;">
-        AI CONCIERGE
-      </div>
-
-      <h2 style="
-        font-family:'Cormorant Garamond',serif;
-        font-size:82px;
-        line-height:.95;
-        margin-bottom:35px;
-        font-weight:600;
-      ">
-        Ask about<br>
-        Egyptian pottery.
-      </h2>
-
-      <p style="
-        font-size:19px;
-        line-height:2;
-        opacity:.78;
-        max-width:520px;
-      ">
-        Explore the meaning behind every collection, discover the heritage of Nile clay,
-        and experience a modern interpretation of Egyptian craftsmanship through an interactive concierge.
-      </p>
-
-    </div>
-
-    <div style="
-      background:#1b1b1b;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:30px;
-      padding:30px;
-      box-shadow:0 20px 50px rgba(0,0,0,.25);
-    ">
-
-      <div id="chat-box" style="
-        height:420px;
-        overflow-y:auto;
-        margin-bottom:25px;
-        display:flex;
-        flex-direction:column;
-        gap:16px;
-      ">
-
-        <div style="
-          background:#2a2a2a;
-          padding:18px;
-          border-radius:18px 18px 18px 4px;
-          max-width:85%;
-          line-height:1.8;
-          font-size:15px;
-        ">
-          Welcome to Perennil. Ask me about our collections, Egyptian pottery heritage, or Nile clay craftsmanship.
-        </div>
-
-      </div>
-
-      <div style="display:flex;gap:14px;">
-
-        <input
-          id="user-input"
-          type="text"
-          placeholder="Ask something..."
-          style="
-            flex:1;
-            padding:18px;
-            border:none;
-            border-radius:18px;
-            background:#2a2a2a;
-            color:white;
-            font-size:15px;
-            outline:none;
-          "
-        >
-
-        <button
-          onclick="sendMessage()"
-          style="
-            padding:18px 28px;
-            border:none;
-            border-radius:18px;
-            background:#f5f1ea;
-            color:#111;
-            font-size:14px;
-            cursor:pointer;
-            letter-spacing:1px;
-          "
-        >
-          SEND
-        </button>
-
+      <div class="product-tag">
+        HANDMADE IN EGYPT
       </div>
 
     </div>
 
   </div>
 
-</section>
+  <div class="product">
 
-<script>
+    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1400&auto=format&fit=crop">
 
-<script>
+    <div class="product-content">
 
-const replies = {
+      <div class="product-title">
+        Desert Bowl
+      </div>
 
-  default: [
-    "Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.",
-    "Every collection reflects a dialogue between ancient material and modern luxury.",
-    "Our philosophy is rooted in craftsmanship, texture, and timeless Egyptian identity."
-  ],
+      <div class="product-desc">
+        Organic serving bowl inspired by desert tones and ancient Egyptian forms.
+      </div>
 
-  clay: [
-    "Our collections are inspired by Nile and Aswan clay traditions that shaped Egyptian pottery for thousands of years.",
-    "Egyptian clay carries a unique mineral texture historically associated with Nile pottery culture.",
-    "The clay narrative is central to Perennil’s identity and artistic language."
-  ],
+      <div class="product-tag">
+        LIMITED COLLECTION
+      </div>
 
-  shipping: [
-    "Perennil plans to offer both local Egyptian delivery and international shipping.",
-    "International delivery will become available as the collections expand globally.",
-    "Shipping timelines depend on handcrafted production and collection availability."
-  ],
+    </div>
 
-  price: [
-    "Pricing reflects handcrafted production, artisan finishing, and limited collection philosophy.",
-    "Each piece is individually finished, making every object slightly unique.",
-    "Perennil follows a slow-crafted luxury approach rather than mass production."
-  ],
+  </div>
 
-  egypt: [
-    "Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.",
-    "Egyptian pottery evolved through Pharaonic, Nubian, Islamic, and Mediterranean civilizations.",
-    "The continuity of Egyptian craft traditions is part of what defines Perennil."
-  ]
+  <div class="product">
 
-};
+    <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1400&auto=format&fit=crop">
 
-function randomReply(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
+    <div class="product-content">
 
-function sendMessage() {
+      <div class="product-title">
+        Pharaoh Set
+      </div>
 
-  const input = document.getElementById('user-input');
-  const chatBox = document.getElementById('chat-box');
+      <div class="product-desc">
+        A refined tableware collection combining minimal luxury with Egyptian symbolism.
+      </div>
 
-  const text = input.value.trim();
+      <div class="product-tag">
+        ARTISAN SERIES
+      </div>
 
-  if (!text) return;
+    </div>
 
-  const userMessage = document.createElement('div');
+  </div>
 
-  userMessage.style.background = '#d8c7b2';
-  userMessage.style.color = '#111';
-  userMessage.style.padding = '18px';
-  userMessage.style.borderRadius = '18px 18px 4px 18px';
-  userMessage.style.maxWidth = '85%';
-  userMessage.style.alignSelf = 'flex-end';
-  userMessage.style.lineHeight = '1.8';
-  userMessage.style.fontSize = '15px';
-
-  userMessage.innerText = text;
-
-  chatBox.appendChild(userMessage);
-
-  input.value = '';
-
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  const typing = document.createElement('div');
-
-  typing.style.background = '#2a2a2a';
-  typing.style.padding = '18px';
-  typing.style.borderRadius = '18px 18px 18px 4px';
-  typing.style.maxWidth = '120px';
-  typing.style.fontSize = '15px';
-
-  typing.innerText = 'Typing...';
-
-  chatBox.appendChild(typing);
-
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  setTimeout(() => {
-
-    typing.remove();
-
-    const botMessage = document.createElement('div');
-
-    botMessage.style.background = '#2a2a2a';
-    botMessage.style.padding = '18px';
-    botMessage.style.borderRadius = '18px 18px 18px 4px';
-    botMessage.style.maxWidth = '85%';
-    botMessage.style.lineHeight = '1.8';
-    botMessage.style.fontSize = '15px';
-
-    let reply = randomReply(replies.default);
-
-    const lower = text.toLowerCase();
-
-    if(lower.includes('clay')) {
-      reply = randomReply(replies.clay);
-    }
-
-    else if(lower.includes('shipping')) {
-      reply = randomReply(replies.shipping);
-    }
-
-    else if(lower.includes('price')) {
-      reply = randomReply(replies.price);
-    }
-
-    else if(lower.includes('egypt')) {
-      reply = randomReply(replies.egypt);
-    }
-
-    botMessage.innerText = reply;
-
-    chatBox.appendChild(botMessage);
-
-    chatBox.scrollTop = chatBox.scrollHeight;
-
-  }, 1200);
-
-}
-
-document.getElementById('user-input').addEventListener('keypress', function(e) {
-
-  if(e.key === 'Enter') {
-    sendMessage();
-  }
-
-});
-
-```html
-<script>
-
-function sendMessage() {
-
-  const input = document.getElementById('user-input');
-  const chatBox = document.getElementById('chat-box');
-
-  const text = input.value.trim();
-
-  if (!text) return;
-
-  const userMessage = document.createElement('div');
-
-  userMessage.style.background = '#d8c7b2';
-  userMessage.style.color = '#111';
-  userMessage.style.padding = '18px';
-  userMessage.style.borderRadius = '18px 18px 4px 18px';
-  userMessage.style.maxWidth = '85%';
-  userMessage.style.alignSelf = 'flex-end';
-  userMessage.style.lineHeight = '1.8';
-  userMessage.style.fontSize = '15px';
-
-  userMessage.innerText = text;
-
-  chatBox.appendChild(userMessage);
-
-  input.value = '';
-
-  chatBox.scrollTop = chatBox.scrollHeight;
-
-  const typing = document.createElement('div');
-
-  typing.style.background = '#2a2a2a';
-  typing.style.padding = '18px';
-  typing.style.borderRadius = '18px 18px 18px 4px';
-
-  typing.innerText = 'Typing...';
-
-  chatBox.appendChild(typing);
-
-  setTimeout(() => {
-
-    typing.remove();
-
-    const botMessage = document.createElement('div');
-
-    botMessage.style.background = '#2a2a2a';
-    botMessage.style.padding = '18px';
-    botMessage.style.borderRadius = '18px 18px 18px 4px';
-    botMessage.style.maxWidth = '85%';
-    botMessage.style.lineHeight = '1.8';
-    botMessage.style.fontSize = '15px';
-
-    const replies = [
-      'Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.',
-      'Egypt holds one of the oldest pottery traditions on earth.',
-      'Our collections are inspired by Nile clay and Egyptian craftsmanship.',
-      'Perennil follows a contemporary luxury approach to Egyptian pottery.'
-    ];
-
-    botMessage.innerText =
-      replies[Math.floor(Math.random() * replies.length)];
-
-    chatBox.appendChild(botMessage);
-
-    chatBox.scrollTop = chatBox.scrollHeight;
-
-  }, 900);
-
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  const input = document.getElementById('user-input');
-
-  input.addEventListener('keypress', function(e) {
-
-    if (e.key === 'Enter') {
-      sendMessage();
-    }
-
-  });
-
-});
-
-</script>
+</div>
 ```
 
-</section>
-  
+  </section>
+
+  <section class="concierge" id="concierge">
+
+```
+<div class="concierge-wrap">
+
+  <div>
+
+    <div class="section-title">
+      AI CONCIERGE
+    </div>
+
+    <h2>
+      Ask about<br>
+      Egyptian pottery.
+    </h2>
+
+    <p style="font-size:19px;line-height:2;opacity:.78;max-width:520px;">
+      Explore the meaning behind every collection, discover the heritage of Nile clay,
+      and experience a modern interpretation of Egyptian craftsmanship through an interactive concierge.
+    </p>
+
+  </div>
+
+  <div class="chat-container">
+
+    <div id="chat-box">
+
+      <div class="bot-message">
+        Welcome to Perennil. Ask me about Egyptian pottery, Nile clay, collections, shipping, or craftsmanship.
+      </div>
+
+    </div>
+
+    <div class="chat-controls">
+
+      <input
+        id="user-input"
+        type="text"
+        placeholder="Ask something..."
+      >
+
+      <button id="send-btn">
+        SEND
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <script>
+
+    const aiReplies = [
+      "Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.",
+      "Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.",
+      "Our collections are inspired by Nile clay and contemporary luxury aesthetics.",
+      "Each object is designed to carry both artistic value and cultural memory.",
+      "Perennil follows a slow-crafted philosophy rather than mass production.",
+      "The textures and earthy tones are inspired by Egyptian desert landscapes and Nile sediment.",
+      "Our future collections aim to reinterpret ancient Egyptian craftsmanship through modern design."
+    ];
+
+    function sendMessage() {
+
+      const input = document.getElementById('user-input');
+      const chatBox = document.getElementById('chat-box');
+
+      const text = input.value.trim();
+
+      if(text === '') return;
+
+      const userMessage = document.createElement('div');
+
+      userMessage.className = 'user-message';
+      userMessage.innerText = text;
+
+      chatBox.appendChild(userMessage);
+
+      input.value = '';
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      const typing = document.createElement('div');
+
+      typing.className = 'bot-message';
+      typing.innerText = 'Typing...';
+
+      chatBox.appendChild(typing);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+
+        typing.remove();
+
+        const botMessage = document.createElement('div');
+
+        botMessage.className = 'bot-message';
+
+        const randomReply = aiReplies[Math.floor(Math.random() * aiReplies.length)];
+
+        botMessage.innerText = randomReply;
+
+        chatBox.appendChild(botMessage);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+      }, 900);
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const sendBtn = document.getElementById('send-btn');
+      const input = document.getElementById('user-input');
+
+      sendBtn.addEventListener('click', sendMessage);
+
+      input.addEventListener('keydown', function(event) {
+
+        if(event.key === 'Enter') {
+          event.preventDefault();
+          sendMessage();
+        }
+
+      });
+
+    });
+
+  </script>
+
 </body>
 </html>
