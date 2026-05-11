@@ -510,54 +510,179 @@
 
   </section>
 
-  <section id="concierge" style="background:#111;color:#f5f1ea;padding:120px 8%;text-align:center;">
+ <section id="concierge" style="background:#111;color:#f5f1ea;padding:120px 8%;">
 
-  <div style="max-width:850px;margin:auto;">
+  <div style="max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
 
-    <div style="letter-spacing:5px;font-size:12px;opacity:.55;margin-bottom:20px;">
-      AI CONCIERGE
+    <div>
+
+      <div style="letter-spacing:5px;font-size:12px;opacity:.55;margin-bottom:20px;">
+        AI CONCIERGE
+      </div>
+
+      <h2 style="
+        font-family:'Cormorant Garamond',serif;
+        font-size:82px;
+        line-height:.95;
+        margin-bottom:35px;
+        font-weight:600;
+      ">
+        Ask about<br>
+        Egyptian pottery.
+      </h2>
+
+      <p style="
+        font-size:19px;
+        line-height:2;
+        opacity:.78;
+        max-width:520px;
+      ">
+        Explore the meaning behind every collection, discover the heritage of Nile clay,
+        and experience a modern interpretation of Egyptian craftsmanship through an interactive concierge.
+      </p>
+
     </div>
 
-    <h2 style="
-      font-family:'Cormorant Garamond',serif;
-      font-size:82px;
-      line-height:.95;
-      margin-bottom:35px;
-      font-weight:600;
+    <div style="
+      background:#1b1b1b;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 20px 50px rgba(0,0,0,.25);
     ">
-      Ask about<br>
-      Egyptian pottery.
-    </h2>
 
-    <p style="
-      max-width:760px;
-      margin:auto;
-      font-size:20px;
-      line-height:2;
-      opacity:.78;
-      margin-bottom:45px;
-    ">
-      Discover the stories behind every collection, explore the heritage of Nile clay,
-      and experience a modern interpretation of six thousand years of Egyptian craftsmanship.
-    </p>
+      <div id="chat-box" style="
+        height:420px;
+        overflow-y:auto;
+        margin-bottom:25px;
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+      ">
 
-    <a href="mailto:social@alden-eg.com"
-       style="
-       display:inline-block;
-       padding:18px 38px;
-       background:#f5f1ea;
-       color:#111;
-       text-decoration:none;
-       border-radius:999px;
-       font-size:14px;
-       letter-spacing:2px;
-       transition:.3s ease;
-    ">
-      SPEAK WITH PERENNIL
-    </a>
+        <div style="
+          background:#2a2a2a;
+          padding:18px;
+          border-radius:18px 18px 18px 4px;
+          max-width:85%;
+          line-height:1.8;
+          font-size:15px;
+        ">
+          Welcome to Perennil. Ask me about our collections, Egyptian pottery heritage, or Nile clay craftsmanship.
+        </div>
+
+      </div>
+
+      <div style="display:flex;gap:14px;">
+
+        <input
+          id="user-input"
+          type="text"
+          placeholder="Ask something..."
+          style="
+            flex:1;
+            padding:18px;
+            border:none;
+            border-radius:18px;
+            background:#2a2a2a;
+            color:white;
+            font-size:15px;
+            outline:none;
+          "
+        >
+
+        <button
+          onclick="sendMessage()"
+          style="
+            padding:18px 28px;
+            border:none;
+            border-radius:18px;
+            background:#f5f1ea;
+            color:#111;
+            font-size:14px;
+            cursor:pointer;
+            letter-spacing:1px;
+          "
+        >
+          SEND
+        </button>
+
+      </div>
+
+    </div>
 
   </div>
 
+</section>
+
+<script>
+
+function sendMessage() {
+
+  const input = document.getElementById('user-input');
+  const chatBox = document.getElementById('chat-box');
+
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  const userMessage = document.createElement('div');
+
+  userMessage.style.background = '#d8c7b2';
+  userMessage.style.color = '#111';
+  userMessage.style.padding = '18px';
+  userMessage.style.borderRadius = '18px 18px 4px 18px';
+  userMessage.style.maxWidth = '85%';
+  userMessage.style.alignSelf = 'flex-end';
+  userMessage.style.lineHeight = '1.8';
+  userMessage.style.fontSize = '15px';
+
+  userMessage.innerText = text;
+
+  chatBox.appendChild(userMessage);
+
+  input.value = '';
+
+  setTimeout(() => {
+
+    const botMessage = document.createElement('div');
+
+    botMessage.style.background = '#2a2a2a';
+    botMessage.style.padding = '18px';
+    botMessage.style.borderRadius = '18px 18px 18px 4px';
+    botMessage.style.maxWidth = '85%';
+    botMessage.style.lineHeight = '1.8';
+    botMessage.style.fontSize = '15px';
+
+    let reply = 'Perennil pieces are handcrafted in Egypt using techniques inspired by centuries of pottery heritage.';
+
+    if(text.toLowerCase().includes('clay')) {
+      reply = 'Our collections are inspired by Nile and Aswan clay traditions that shaped Egyptian pottery for thousands of years.';
+    }
+
+    if(text.toLowerCase().includes('shipping')) {
+      reply = 'Perennil plans to offer both local Egyptian delivery and international shipping.';
+    }
+
+    if(text.toLowerCase().includes('price')) {
+      reply = 'Pricing reflects handcrafted production, artisan finishing, and limited collection philosophy.';
+    }
+
+    if(text.toLowerCase().includes('egypt')) {
+      reply = 'Egypt holds one of the oldest pottery traditions on earth, dating back more than six thousand years.';
+    }
+
+    botMessage.innerText = reply;
+
+    chatBox.appendChild(botMessage);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+  }, 600);
+
+}
+
+</script>
 </section>
   
 </body>
