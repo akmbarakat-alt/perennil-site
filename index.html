@@ -194,6 +194,16 @@ nav.scrolled {
   transition: color 0.4s ease;
 }
 
+.nav-logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+  transition: opacity 0.4s ease;
+}
+.nav-logo:hover { opacity: 1; }
+
 nav.scrolled .nav-mark { color: var(--char); }
 
 .nav-links {
@@ -305,6 +315,7 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   .nav-hamburger { display: flex; }
   nav { padding: 22px 24px; }
   nav.scrolled { padding: 16px 24px; }
+  .nav-logo { height: 36px; }
 }
 
 /* ─────────────────────────── HERO ─────────────────────────── */
@@ -1132,7 +1143,7 @@ footer .arabic {
 
 <!-- ─────────────────────────── NAV ─────────────────────────── -->
 <nav id="nav" aria-label="Main navigation">
-  <a href="#top" class="nav-mark">PERENNIL</a>
+  <a href="#top" class="nav-mark"><img src="perennil-logo.png" alt="PERENNIL" class="nav-logo"></a>
   <ul class="nav-links">
     <li><a href="#story">Story</a></li>
     <li><a href="#kerma">Kerma</a></li>
