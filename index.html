@@ -194,22 +194,6 @@ nav.scrolled {
   transition: color 0.4s ease;
 }
 
-.nav-logo {
-  height: 52px;
-  width: auto;
-  display: block;
-  filter: brightness(0) invert(1);
-  transition: filter 0.4s ease, opacity 0.4s ease;
-  opacity: 0.92;
-  mix-blend-mode: multiply;
-  background: transparent;
-}
-nav.scrolled .nav-logo {
-  filter: none;
-  opacity: 1;
-  mix-blend-mode: multiply;
-}
-
 nav.scrolled .nav-mark { color: var(--char); }
 
 .nav-links {
@@ -321,7 +305,6 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   .nav-hamburger { display: flex; }
   nav { padding: 22px 24px; }
   nav.scrolled { padding: 16px 24px; }
-  .nav-logo { height: 38px; }
 }
 
 /* ─────────────────────────── HERO ─────────────────────────── */
@@ -1149,7 +1132,7 @@ footer .arabic {
 
 <!-- ─────────────────────────── NAV ─────────────────────────── -->
 <nav id="nav" aria-label="Main navigation">
-  <a href="#top" class="nav-mark"><img src="perennil-logo.png" alt="PERENNIL — House of the Nile" class="nav-logo"></a>
+  <a href="#top" class="nav-mark">PERENNIL</a>
   <ul class="nav-links">
     <li><a href="#story">Story</a></li>
     <li><a href="#kerma">Kerma</a></li>
