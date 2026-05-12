@@ -811,16 +811,17 @@ h2 em {
 
 .civ-era {
   font-family: 'Marcellus', serif;
-  font-size: 13px;
-  letter-spacing: 0.3em;
+  font-size: 14px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   opacity: 0.6;
 }
 
 .civ-badge {
   font-family: 'Marcellus', serif;
-  font-size: 12px;
-  letter-spacing: 0.35em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: right;
   opacity: 0.5;
@@ -907,9 +908,10 @@ h2 em {
   border: none;
   outline: none;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
+  font-size: 16px;
   color: var(--ivory);
   padding: 14px 0;
+  min-height: 44px;
   letter-spacing: 0.02em;
   direction: ltr;
 }
@@ -927,8 +929,9 @@ h2 em {
   border: none;
   color: var(--ivory);
   font-family: 'Marcellus', serif;
-  font-size: 12px;
-  letter-spacing: 0.4em;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 14px 28px 14px 0;
   cursor: pointer;
@@ -965,9 +968,10 @@ h2 em {
 
 .signup-note {
   font-family: 'Marcellus', serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  line-height: 1.7;
   opacity: 0.6;
   margin-top: 28px;
 }
@@ -1116,6 +1120,11 @@ body[dir="rtl"] .civ-row.launching {
   padding-left: 0;
 }
 body[dir="rtl"] .civ-badge { text-align: left; }
+body[dir="rtl"] .hero-cta::after { content: none; }
+body[dir="rtl"] .hero-cta:hover::after { content: none; }
+body[dir="rtl"] .motif h3 { font-size: 16px; font-weight: 500; }
+body[dir="rtl"] .motif p { font-size: 13px; }
+body[dir="rtl"] .signup .section-eyebrow { font-size: 13px; letter-spacing: 0.4em; }
 
 </style>
 </head>
@@ -1163,7 +1172,7 @@ body[dir="rtl"] .civ-badge { text-align: left; }
       دار خزفية فاخرة وُلدت في القاهرة. تُصاغ من طين أسوان بأيدي صانعيها. تُزخرف بحضارات مصر، حضارةً بعد حضارة.
     </p>
     <div class="hero-arabic">بيرنيل</div>
-    <a href="#story" class="hero-cta">اقرأ الحكاية</a>
+    <a href="#story" class="hero-cta">اقرأ الحكاية ↓</a>
   </div>
   <div class="scroll-cue">انزل</div>
 </section>
