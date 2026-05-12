@@ -40,7 +40,7 @@
 <meta name="twitter:image:alt" content="PERENNIL — Luxury Egyptian pottery">
 
 <!-- ─────────────────────────── FAVICON ─────────────────────────── -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231B3A6B'/%3E%3Ctext x='50' y='65' font-family='Georgia' font-size='48' fill='%23C8860A' text-anchor='middle' font-weight='300'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231F6B5C'/%3E%3Ctext x='50' y='65' font-family='Georgia' font-size='48' fill='%23D4B068' text-anchor='middle' font-weight='300'%3EP%3C/text%3E%3C/svg%3E">
 
 <!-- ─────────────────────────── FONTS ─────────────────────────── -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,15 +114,25 @@
 
 <style>
 :root {
+  /* ── PERENNIL Brand Colors — locked May 2026 ── */
+  --faience:      #1F6B5C;   /* Signature — the brand's face */
+  --faience-dark: #154A40;   /* Hover states, depth */
+  --brass:        #D4B068;   /* Accent — hairlines, foil details */
+  --brass-dark:   #A88547;   /* Brass shadow */
+  --linen:        #F2EBDD;   /* Surface — off-white, paper */
+  --ink:          #1A1A1A;   /* Discipline — type that can't compromise */
+  --aswan:        #8B3A2A;   /* The actual pottery clay color — used sparingly */
+
+  /* ── Kept for backward compatibility (Kerma collection palette) ── */
   --clay:        #C8896B;
   --clay-dark:   #8B3A2A;
-  --nile:        #1B3A6B;
+  --nile:        #1B3A6B;   /* KEEP — this is now Kerma-only, not brand */
   --nile-deep:   #0F2240;
   --ivory:       #F5F0DC;
   --bone:        #EFE7D8;
   --ochre:       #C8860A;
   --char:        #1A1A1A;
-  --linen:       #ECE4D3;
+  --linen-bg:    #ECE4D3;   /* renamed from --linen to avoid conflict */
   --hairline:    rgba(26,26,26,0.18);
 }
 
@@ -169,7 +179,7 @@ nav {
 }
 
 nav.scrolled {
-  background: rgba(236,228,211,0.92);
+  background: rgba(242,235,221,0.94);
   backdrop-filter: blur(20px);
   padding: 18px 48px;
   border-bottom: 1px solid var(--hairline);
@@ -242,7 +252,7 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   position: fixed;
   inset: 0;
   z-index: 105;
-  background: var(--nile-deep);
+  background: var(--faience-dark);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -286,7 +296,7 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   font-size: 10px;
   letter-spacing: 0.45em;
   text-transform: uppercase;
-  color: var(--ochre);
+  color: var(--brass);
   opacity: 0.8;
 }
 
@@ -314,7 +324,7 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-color: var(--nile-deep);
+  background-color: var(--faience-dark);
   background-image: url('https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=2400&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
@@ -327,8 +337,8 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at center, transparent 0%, rgba(15,34,64,0.45) 70%, rgba(15,34,64,0.7) 100%),
-    linear-gradient(180deg, rgba(15,34,64,0.3) 0%, transparent 30%, transparent 70%, rgba(15,34,64,0.4) 100%);
+    radial-gradient(ellipse at center, transparent 0%, rgba(21,74,64,0.50) 70%, rgba(21,74,64,0.75) 100%),
+    linear-gradient(180deg, rgba(21,74,64,0.35) 0%, transparent 30%, transparent 70%, rgba(21,74,64,0.45) 100%);
 }
 
 .hero-content {
@@ -378,7 +388,7 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
   font-weight: 300;
-  color: var(--ochre);
+  color: var(--brass);
 }
 
 .hero-tag {
@@ -414,13 +424,13 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   text-transform: uppercase;
   transition: all 0.4s ease;
   animation: fadeUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
-  background: rgba(15,34,64,0.15);
+  background: rgba(21,74,64,0.15);
   backdrop-filter: blur(4px);
 }
 
 .hero-cta:hover {
   background: var(--ivory);
-  color: var(--nile-deep);
+  color: var(--faience-dark);
   letter-spacing: 0.5em;
 }
 
@@ -462,7 +472,7 @@ section {
   font-size: 12px;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  color: var(--clay-dark);
+  color: var(--faience);
   margin-bottom: 28px;
   display: inline-flex;
   align-items: center;
@@ -473,7 +483,7 @@ section {
   content: '';
   width: 32px;
   height: 1px;
-  background: var(--clay-dark);
+  background: var(--faience);
 }
 
 h2 {
@@ -489,7 +499,7 @@ h2 em {
   font-family: 'Cormorant Infant', serif;
   font-style: italic;
   font-weight: 300;
-  color: var(--clay-dark);
+  color: var(--faience);
 }
 
 /* ─────────────────────────── STORY PROSE ─────────────────────────── */
@@ -513,7 +523,7 @@ h2 em {
 .story-intro .lead {
   font-size: 22px;
   font-style: italic;
-  color: var(--clay-dark);
+  color: var(--faience-dark);
   max-width: 680px;
   margin: 0 auto;
   font-family: 'Cormorant Infant', serif;
@@ -538,7 +548,7 @@ h2 em {
   font-style: italic;
   font-size: 30px;
   line-height: 1.5;
-  color: var(--clay-dark);
+  color: var(--faience-dark);
   margin-bottom: 36px;
   font-weight: 300;
 }
@@ -569,7 +579,7 @@ h2 em {
   font-style: italic;
   font-size: 26px;
   line-height: 1.5;
-  color: var(--clay-dark);
+  color: var(--faience-dark);
   text-align: center;
   margin-bottom: 0;
 }
@@ -582,7 +592,7 @@ h2 em {
 
 /* ─────────────────────────── NAME ETYMOLOGY ─────────────────────────── */
 .name-section {
-  background: var(--nile-deep);
+  background: var(--faience-dark);
   color: var(--ivory);
   padding: 140px 8%;
   text-align: center;
@@ -621,7 +631,7 @@ h2 em {
   font-family: 'Cormorant Garamond', serif;
   font-size: 88px;
   font-weight: 300;
-  color: var(--ochre);
+  color: var(--brass);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -679,7 +689,7 @@ h2 em {
   font-size: 11px;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--clay-dark);
+  color: var(--faience-dark);
   margin-bottom: 24px;
 }
 
@@ -687,7 +697,7 @@ h2 em {
   font-size: 21px;
   font-style: italic;
   line-height: 1.7;
-  color: var(--clay-dark);
+  color: var(--faience-dark);
   font-family: 'Cormorant Infant', serif;
   font-weight: 300;
 }
@@ -759,7 +769,7 @@ h2 em {
   font-style: italic;
   font-size: 34px;
   margin-bottom: 50px;
-  color: var(--clay-dark);
+  color: var(--faience-dark);
 }
 
 .palette {
@@ -806,10 +816,10 @@ h2 em {
   text-align: center;
 }
 
-.civ-header .section-eyebrow { color: var(--ochre); }
-.civ-header .section-eyebrow::before { background: var(--ochre); }
+.civ-header .section-eyebrow { color: var(--brass); }
+.civ-header .section-eyebrow::before { background: var(--brass); }
 
-.civ-header h2 em { color: var(--ochre); }
+.civ-header h2 em { color: var(--brass); }
 
 .civ-header .lead {
   font-size: 20px;
@@ -839,7 +849,7 @@ h2 em {
 .civ-row:hover { padding-left: 16px; }
 
 .civ-row.launching {
-  background: linear-gradient(90deg, rgba(200,134,10,0.08) 0%, transparent 60%);
+  background: linear-gradient(90deg, rgba(212,176,104,0.10) 0%, transparent 60%);
   padding-left: 24px;
 }
 
@@ -847,7 +857,7 @@ h2 em {
   font-family: 'Cormorant Garamond', serif;
   font-size: 36px;
   font-weight: 300;
-  color: var(--ochre);
+  color: var(--brass);
   font-style: italic;
 }
 
@@ -875,7 +885,7 @@ h2 em {
 }
 
 .civ-row.launching .civ-badge {
-  color: var(--ochre);
+  color: var(--brass);
   opacity: 1;
 }
 
@@ -896,10 +906,10 @@ h2 em {
 /* ─────────────────────────── SIGNUP ─────────────────────────── */
 .signup {
   padding: 160px 8%;
-  background: var(--clay);
+  background: var(--faience);
   background-image:
-    radial-gradient(ellipse at 30% 20%, rgba(245,240,220,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(139,58,42,0.2) 0%, transparent 50%);
+    radial-gradient(ellipse at 30% 20%, rgba(242,235,221,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(21,74,64,0.25) 0%, transparent 50%);
   text-align: center;
   color: var(--ivory);
   position: relative;
@@ -926,7 +936,7 @@ h2 em {
 .signup .section-eyebrow::before { background: var(--ivory); opacity: 0.6; }
 
 .signup h2 { color: var(--ivory); }
-.signup h2 em { color: var(--ochre); }
+.signup h2 em { color: var(--brass); }
 
 .signup p {
   font-size: 20px;
@@ -1012,7 +1022,7 @@ h2 em {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ochre);
+  color: var(--brass);
   margin-top: 20px;
 }
 
@@ -1029,7 +1039,7 @@ h2 em {
 
 /* ─────────────────────────── FOOTER ─────────────────────────── */
 footer {
-  background: var(--nile-deep);
+  background: var(--faience-dark);
   color: var(--ivory);
   padding: 90px 8% 40px;
   text-align: center;
@@ -1062,7 +1072,7 @@ footer {
 .footer-divider {
   width: 60px;
   height: 1px;
-  background: var(--ochre);
+  background: var(--brass);
   margin: 0 auto 30px;
 }
 
@@ -1211,8 +1221,8 @@ footer .arabic {
 
 <!-- ─────────────────────────── NAME ─────────────────────────── -->
 <section class="name-section reveal">
-  <div class="section-eyebrow" style="color: var(--ochre);">The Name</div>
-  <h2 style="color: var(--ivory);">House of the <em style="color: var(--ochre);">Nile</em></h2>
+  <div class="section-eyebrow" style="color: var(--brass);">The Name</div>
+  <h2 style="color: var(--ivory);">House of the <em style="color: var(--brass);">Nile</em></h2>
 
   <div class="name-decomposition">
     <div class="name-part">
