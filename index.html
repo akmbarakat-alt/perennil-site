@@ -201,10 +201,13 @@ nav.scrolled {
   filter: brightness(0) invert(1);
   transition: filter 0.4s ease, opacity 0.4s ease;
   opacity: 0.92;
+  mix-blend-mode: multiply;
+  background: transparent;
 }
 nav.scrolled .nav-logo {
   filter: none;
   opacity: 1;
+  mix-blend-mode: multiply;
 }
 
 nav.scrolled .nav-mark { color: var(--char); }
