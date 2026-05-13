@@ -249,6 +249,46 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
   opacity: 0.8;
 }
 
+.mobile-nav-lang {
+  font-family: 'Marcellus', serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  color: var(--faience);
+  text-decoration: none;
+  padding: 12px 0;
+  display: inline-block;
+  border-top: 1px solid rgba(31, 107, 92, 0.2);
+  margin-top: 16px;
+  padding-top: 24px;
+  transition: color 0.3s ease;
+}
+.mobile-nav-lang:hover {
+  color: var(--brass);
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--faience);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+.mobile-nav-close:hover {
+  opacity: 0.6;
+}
+body[dir="rtl"] .mobile-nav-close {
+  right: auto;
+  left: 24px;
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
@@ -1199,18 +1239,28 @@ body[dir="rtl"] .civ-name {
   letter-spacing: 0.02em;
 }
 
+body[dir="rtl"] .scroll-cue {
+  display: none;
+}
+
 </style>
 </head>
 <body dir="rtl">
 
 <!-- ─────────────────────────── MOBILE NAV OVERLAY ─────────────────────────── -->
 <div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="قائمة التنقل">
+  <button class="mobile-nav-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <line x1="6" y1="6" x2="18" y2="18"/>
+      <line x1="18" y1="6" x2="6" y2="18"/>
+    </svg>
+  </button>
   <ul>
     <li><a href="#story">الحكاية</a></li>
     <li><a href="#kerma">كِرما</a></li>
     <li><a href="#civilizations">المكتبة</a></li>
     <li><a href="#signup">قائمة الانطلاق</a></li>
-    <li><a href="/" style="font-family:'Marcellus',serif;font-size:22px;">EN</a></li>
+    <li><a href="/" class="mobile-nav-lang">EN · English</a></li>
   </ul>
   <div class="mobile-nav-stamp">القاهرة — منذ ٢٠٢٦</div>
 </div>
@@ -1582,6 +1632,12 @@ hamburger.addEventListener('click', () => {
 });
 
 mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
+
+document.querySelector('.mobile-nav-close')?.addEventListener('click', () => {
+  document.querySelector('.mobile-nav').classList.remove('open');
+  document.querySelector('.nav-hamburger').classList.remove('active');
+  document.body.style.overflow = '';
+});
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMobileNav();
