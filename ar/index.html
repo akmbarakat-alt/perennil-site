@@ -393,7 +393,7 @@ nav.scrolled .nav-hamburger span { background: var(--char); }
 
 .scroll-cue {
   position: absolute;
-  bottom: 38px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Marcellus', serif;
@@ -1122,6 +1122,82 @@ body[dir="rtl"] .civ-row.launching {
 body[dir="rtl"] .civ-badge { text-align: left; }
 body[dir="rtl"] .hero-cta::after { content: none; }
 body[dir="rtl"] .hero-cta:hover::after { content: none; }
+
+/* ── Arabic readability fixes — May 2026 ── */
+/* Switch Marcellus-rendered small text to Markazi Text and bump sizes */
+
+body[dir="rtl"] .hero-eyebrow {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+}
+
+body[dir="rtl"] .scroll-cue {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+}
+
+body[dir="rtl"] .section-eyebrow {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+}
+
+body[dir="rtl"] .meaning {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+}
+
+body[dir="rtl"] .kerma-meta {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+body[dir="rtl"] .civ-era {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+
+body[dir="rtl"] .civ-badge {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+body[dir="rtl"] .motif p {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+
+body[dir="rtl"] .swatch-name {
+  font-family: 'Markazi Text', serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+
+body[dir="rtl"] .signup-form button {
+  font-family: 'Markazi Text', serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+body[dir="rtl"] .signup-note {
+  font-family: 'Markazi Text', serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+body[dir="rtl"] .civ-name {
+  font-family: 'Amiri', 'Cormorant Infant', serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
 
 </style>
 </head>
