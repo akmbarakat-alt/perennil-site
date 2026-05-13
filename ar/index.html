@@ -301,6 +301,7 @@ body[dir="rtl"] .mobile-nav-close {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -1177,20 +1178,6 @@ body[dir="rtl"] .hero-cta:hover::after { content: none; }
 /* ── Arabic readability fixes — May 2026 ── */
 /* Switch Marcellus-rendered small text to Markazi Text and bump sizes */
 
-body[dir="rtl"] .hero-eyebrow {
-  font-family: 'Markazi Text', serif;
-  font-size: 18px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  margin-bottom: 32px;
-  text-align: center;
-}
-
-body[dir="rtl"] .scroll-cue {
-  font-family: 'Markazi Text', serif;
-  font-size: 16px;
-  letter-spacing: 0.2em;
-}
 
 body[dir="rtl"] .section-eyebrow {
   font-family: 'Markazi Text', serif;
@@ -1253,6 +1240,20 @@ body[dir="rtl"] .civ-name {
   letter-spacing: 0.02em;
 }
 
+body[dir="rtl"] .hero-eyebrow {
+  font-family: 'Markazi Text', serif;
+  font-size: 18px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  position: static;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: auto;
+  z-index: auto;
+}
+
 body[dir="rtl"] .scroll-cue {
   display: none;
 }
@@ -1311,7 +1312,6 @@ body[dir="rtl"] .scroll-cue {
     <div class="hero-arabic">بيرنيل</div>
     <a href="#story" class="hero-cta">اقرأ الحكاية ↓</a>
   </div>
-  <div class="scroll-cue">انزل</div>
 </section>
 
 <!-- ─────────────────────────── STORY ─────────────────────────── -->
