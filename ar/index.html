@@ -1176,10 +1176,15 @@ body[dir="rtl"] .hero-cta:hover::after { content: none; }
 /* ── Arabic readability fixes — May 2026 ── */
 /* Switch Marcellus-rendered small text to Markazi Text and bump sizes */
 
+body[dir="rtl"] .hero-content {
+  padding-top: 100px;
+}
 body[dir="rtl"] .hero-eyebrow {
   font-family: 'Markazi Text', serif;
-  font-size: 16px;
-  letter-spacing: 0.2em;
+  font-size: 18px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
 body[dir="rtl"] .scroll-cue {
